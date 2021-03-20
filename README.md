@@ -16,5 +16,5 @@ func main()  {
 
 	wxRes, err := wxAuth.GetToken("code")
 
-	userInfo, _ := wxAuth.GetUserInfo(wxRes.AccessToken, wxRes.Openid)
+	userInfo, _ := wxAuth.GetUserInfo(wxRes.AccessToken, wxRes.OpenId)
 }

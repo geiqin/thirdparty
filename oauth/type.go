@@ -19,7 +19,7 @@ type AuthQqErrRes struct {
 }
 type AuthQqMe struct {
 	ClientId string `json:"client_id"`
-	OpenID   string `json:"openid"`
+	OpenId   string `json:"openid"`
 }
 
 //@ qq 结构 ------------------------------------------------- end
@@ -37,7 +37,7 @@ type AuthWbErrRes struct {
 
 type AuthWbSuccRes struct {
 	AccessToken string `json:"access_token"`
-	Openid      string `json:"uid"`
+	OpenId      string `json:"uid"`
 }
 
 //@ weibo 结构 ------------------------------------------------- end
@@ -55,7 +55,7 @@ type AuthWxErrRes struct {
 
 type AuthWxSuccRes struct {
 	AccessToken string `json:"access_token"`
-	Openid      string `json:"openid"`
+	OpenId      string `json:"openid"`
 }
 
 //@ weixin 结构 ------------------------------------------------- end
@@ -73,7 +73,7 @@ type AuthGithubErrRes struct {
 
 type AuthGithubSuccRes struct {
 	AccessToken string `json:"access_token"`
-	Openid      string `json:"openid"`
+	OpenId      string `json:"openid"`
 }
 
 //@ github 结构 ------------------------------------------------- end
