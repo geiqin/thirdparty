@@ -2,11 +2,13 @@ package main
 
 import (
 	"fmt"
+	"github.com/geiqin/thirdparty/config"
 	"github.com/geiqin/thirdparty/oauth"
+	"log"
 )
 
-func main()  {
-	wxConf := &oauth.AuthConf{ClientId: "xxx", ClientSecret: "xxx", RedirectUrl: "http://www.change.tm"}
+func main() {
+	wxConf := &config.AuthConfig{ClientId: "xxx", ClientSecret: "xxx", RedirectUrl: "http://www.change.tm"}
 
 	wxAuth := oauth.NewAuthWx(wxConf)
 
@@ -14,5 +16,7 @@ func main()  {
 
 	wxRes, err := wxAuth.GetToken("code")
 
-	userInfo, _ := wxAuth.GetUserInfo(wxRes.AccessToken, wxRes.Openid)
+	userInfo, _ := wxAuth.GetUserInfo(wxRes.AccessToken, wxRes.OpenId)
+
+	log.Println("ssss:", err, userInfo)
 }

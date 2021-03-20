@@ -20,33 +20,79 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c39cd3b1-8325-4d30-983c-20e34a2ee3aa" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/config/configs.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/entity/failure.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/entity/param.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/auth_fast.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/auth_sms.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oauth/auth_douyin.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oauth/base.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result/code.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result/token.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result/user.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/gender.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/http.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ip.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/mss.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/url.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/uuid.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oauth/type.go" beforeDir="false" afterPath="$PROJECT_DIR$/oauth/type.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oauth/common.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oauth/outh_gitee.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oauth/outh_github.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oauth/outh_qq.go" beforeDir="false" afterPath="$PROJECT_DIR$/oauth/auth_qq.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oauth/outh_wb.go" beforeDir="false" afterPath="$PROJECT_DIR$/oauth/auth_wb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oauth/outh_wx.go" beforeDir="false" afterPath="$PROJECT_DIR$/oauth/auth_wx.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oauth/type.go" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
   <component name="GOROOT" path="D:\Go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
   <component name="ProjectId" id="1q15T0414tqGe8krNeEKaSeqy9T" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/oauth" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GitHub\thirdparty\result" />
+      <recent name="D:\GitHub\thirdparty\config" />
+      <recent name="D:\GitHub\thirdparty\libs" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GitHub\thirdparty\oauth" />
       <recent name="D:\GitHub\thirdparty" />
     </key>
   </component>
@@ -67,5 +113,27 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1616253548129">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1616253548129" />
+    <state x="425" y="189" key="EditFileWatcherDialog" timestamp="1616253478751">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="189" key="EditFileWatcherDialog/0.0.1536.824@0.0.1536.824" timestamp="1616253478751" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1616249783137">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1616249783137" />
+    <state x="270" y="57" key="SettingsEditor" timestamp="1616253480578">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="270" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1616253480578" />
   </component>
 </project>
