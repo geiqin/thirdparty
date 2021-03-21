@@ -68,7 +68,7 @@ func (a *AuthWxWechat) GetToken(code string) (*result.TokenResult, error) {
 }
 
 //获取第三方用户信息
-func (a *AuthWxWechat) GetUserInfo(openId string, accessToken string) (*result.UserResult, error) {
+func (a *AuthWxWechat) GetUserInfo(accessToken string, openId string) (*result.UserResult, error) {
 	url := utils.NewUrlBuilder(a.TokenUrl).
 		AddParam("openid", openId).
 		AddParam("access_token", accessToken).
