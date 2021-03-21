@@ -2,7 +2,6 @@ package oauth
 
 import (
 	"errors"
-	"github.com/geiqin/thirdparty/config"
 	"github.com/geiqin/thirdparty/result"
 	"github.com/geiqin/thirdparty/utils"
 )
@@ -12,7 +11,7 @@ type AuthWxWechat struct {
 	BaseRequest
 }
 
-func NewAuthWxWechat(conf *config.AuthConfig) *AuthWxWechat {
+func NewAuthWxWechat(conf *AuthConfig) *AuthWxWechat {
 	authRequest := &AuthWxWechat{}
 	authRequest.Set("wx_wechat", conf)
 

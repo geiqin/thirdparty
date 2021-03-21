@@ -3,7 +3,6 @@ package oauth
 import (
 	"encoding/json"
 	"errors"
-	"github.com/geiqin/thirdparty/config"
 	"github.com/geiqin/thirdparty/result"
 	"github.com/geiqin/thirdparty/utils"
 	"github.com/xlstudio/wxbizdatacrypt"
@@ -14,7 +13,7 @@ type AutoWxMini struct {
 	BaseRequest
 }
 
-func NewAutoWxMini(conf *config.AuthConfig) *AutoWxMini {
+func NewAutoWxMini(conf *AuthConfig) *AutoWxMini {
 	authRequest := &AutoWxMini{}
 	authRequest.Set("wx_mini", conf)
 

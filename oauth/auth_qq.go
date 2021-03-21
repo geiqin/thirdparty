@@ -2,7 +2,6 @@ package oauth
 
 import (
 	"errors"
-	"github.com/geiqin/thirdparty/config"
 	"github.com/geiqin/thirdparty/result"
 	"github.com/geiqin/thirdparty/utils"
 )
@@ -12,7 +11,7 @@ type AuthQq struct {
 	BaseRequest
 }
 
-func NewAuthQq(conf *config.AuthConfig) *AuthQq {
+func NewAuthQq(conf *AuthConfig) *AuthQq {
 	authRequest := &AuthQq{}
 	authRequest.Set("qq", conf)
 

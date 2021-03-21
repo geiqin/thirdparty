@@ -2,7 +2,6 @@ package oauth
 
 import (
 	"errors"
-	"github.com/geiqin/thirdparty/config"
 	"github.com/geiqin/thirdparty/result"
 	"github.com/geiqin/thirdparty/utils"
 )
@@ -12,7 +11,7 @@ type AuthWb struct {
 	BaseRequest
 }
 
-func NewAuthWb(conf *config.AuthConfig) *AuthWb {
+func NewAuthWb(conf *AuthConfig) *AuthWb {
 	authRequest := &AuthWb{}
 	authRequest.Set("weibo", conf)
 

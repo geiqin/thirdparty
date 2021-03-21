@@ -2,7 +2,6 @@ package oauth
 
 import (
 	"errors"
-	"github.com/geiqin/thirdparty/config"
 	"github.com/geiqin/thirdparty/result"
 	"github.com/geiqin/thirdparty/utils"
 )
@@ -12,7 +11,7 @@ type AuthDouYin struct {
 	BaseRequest
 }
 
-func NewAuthDouYin(conf *config.AuthConfig) *AuthDouYin {
+func NewAuthDouYin(conf *AuthConfig) *AuthDouYin {
 	authRequest := &AuthDouYin{}
 	authRequest.Set("douyin", conf)
 
