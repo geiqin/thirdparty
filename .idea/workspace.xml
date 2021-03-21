@@ -20,17 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c39cd3b1-8325-4d30-983c-20e34a2ee3aa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/oauth/auth_wx_wechat.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result/wx_mobile.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oauth/auth_douyin.go" beforeDir="false" afterPath="$PROJECT_DIR$/oauth/auth_douyin.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oauth/auth_qq.go" beforeDir="false" afterPath="$PROJECT_DIR$/oauth/auth_qq.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oauth/auth_wb.go" beforeDir="false" afterPath="$PROJECT_DIR$/oauth/auth_wb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oauth/auth_wx.go" beforeDir="false" afterPath="$PROJECT_DIR$/oauth/auth_wx_mini.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/result/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oauth/auth_wx_mini.go" beforeDir="false" afterPath="$PROJECT_DIR$/oauth/auth_wx_mini.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

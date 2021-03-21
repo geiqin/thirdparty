@@ -3,7 +3,6 @@ module github.com/geiqin/thirdparty
 go 1.14
 
 require (
-	github.com/geiqin/gotools v1.2.0 // indirect
 	github.com/satori/go.uuid v1.2.0
 	github.com/xlstudio/wxbizdatacrypt v1.0.2
 )

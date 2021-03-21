@@ -24,7 +24,7 @@ func NewAutoWxMini(conf *config.AuthConfig) *AutoWxMini {
 	return authRequest
 }
 
-//获取token
+//获取token，一般返回 sessionKey
 func (a *AutoWxMini) GetToken(code string) (*result.TokenResult, error) {
 	url := utils.NewUrlBuilder(a.TokenUrl).
 		AddParam("grant_type", "authorization_code").
@@ -48,32 +48,32 @@ func (a *AutoWxMini) GetToken(code string) (*result.TokenResult, error) {
 	return token, nil
 }
 
-//获取第三方用户信息
-func (a *AutoWxMini) GetUserInfo(openId string, accessToken string) (*result.UserResult, error) {
-	url := utils.NewUrlBuilder(a.TokenUrl).
-		AddParam("openid", openId).
-		AddParam("access_token", accessToken).
-		Build()
+//获取用户信息
+func (a *AutoWxMini) GetUserInfo(sessionKey string, encryptedData string, iv string) (*result.UserResult, error) {
+	pc := wxbizdatacrypt.WxBizDataCrypt{AppId: a.config.ClientId, SessionKey: sessionKey}
+	ret, err := pc.Decrypt(encryptedData, iv, true) //第三个参数解释： 需要返回 JSON 数据类型时 使用 true, 需要返回 map 数据类型时 使用 false
 
-	body, err := utils.Get(url)
 	if err != nil {
 		return nil, err
 	}
-	m := utils.JsonToMSS(body)
+
+	m := utils.JsonToMSS(ret.(string))
 	if _, ok := m["error"]; ok {
 		return nil, errors.New(m["error_description"])
 	}
+
 	user := &result.UserResult{
 		OpenId:    m["openId"],
+		UserName:  m["nickName"],
 		NickName:  m["nickName"],
-		Language:  m["language"],
+		AvatarUrl: m["avatarUrl"],
 		City:      m["city"],
 		Province:  m["province"],
 		Country:   m["country"],
-		AvatarUrl: m["avatarUrl"],
 		Source:    a.sourceName,
-		Gender:    utils.GetRealGender("gender").Desc,
+		Gender:    utils.GetRealGender(m["gender"]).Desc,
 	}
+
 	return user, nil
 }
 
