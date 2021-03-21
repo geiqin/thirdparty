@@ -6,7 +6,7 @@ type UserResult struct {
 	OpenId    string `json:"openId"`
 	UserName  string `json:"user_name"`
 	NickName  string `json:"nick_name"`
-	Avatar    string `json:"avatar"`
+	AvatarUrl string `json:"avatar"`
 	Company   string `json:"company"`
 	Language  string `json:"language"`
 	City      string `json:"city"`

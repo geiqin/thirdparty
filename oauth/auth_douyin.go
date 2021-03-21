@@ -86,7 +86,7 @@ func (a *AuthDouYin) GetUserInfo(openId string, accessToken string) (*result.Use
 		UUID:      m["id"],
 		UserName:  m["login"],
 		NickName:  m["name"],
-		Avatar:    m["avatar_url"],
+		AvatarUrl: m["avatar_url"],
 		Company:   m["company"],
 		Blog:      m["blog"],
 		Location:  m["location"],

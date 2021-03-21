@@ -8,13 +8,13 @@ import (
 )
 
 //微信授权登录
-type AuthWx struct {
+type AuthWxWechat struct {
 	BaseRequest
 }
 
-func NewAuthWx(conf *config.AuthConfig) *AuthWx {
-	authRequest := &AuthWx{}
-	authRequest.Set("weixin", conf)
+func NewAuthWxWechat(conf *config.AuthConfig) *AuthWxWechat {
+	authRequest := &AuthWxWechat{}
+	authRequest.Set("wx_wechat", conf)
 
 	authRequest.authorizeUrl = "https://open.weixin.qq.com/connect/qrconnect"
 	authRequest.TokenUrl = "https://api.weixin.qq.com/sns/oauth2/access_token"
@@ -24,7 +24,7 @@ func NewAuthWx(conf *config.AuthConfig) *AuthWx {
 }
 
 //获取登录地址
-func (a *AuthWx) GetRedirectUrl(state string) (*result.CodeResult, error) {
+func (a *AuthWxWechat) GetRedirectUrl(state string) (*result.CodeResult, error) {
 	url := utils.NewUrlBuilder(a.authorizeUrl).
 		AddParam("response_type", "code").
 		AddParam("appid", a.config.ClientId).
@@ -41,7 +41,7 @@ func (a *AuthWx) GetRedirectUrl(state string) (*result.CodeResult, error) {
 }
 
 //获取token
-func (a *AuthWx) GetToken(code string) (*result.TokenResult, error) {
+func (a *AuthWxWechat) GetToken(code string) (*result.TokenResult, error) {
 	url := utils.NewUrlBuilder(a.TokenUrl).
 		AddParam("grant_type", "authorization_code").
 		AddParam("code", code).
@@ -69,7 +69,7 @@ func (a *AuthWx) GetToken(code string) (*result.TokenResult, error) {
 }
 
 //获取第三方用户信息
-func (a *AuthWx) GetUserInfo(openId string, accessToken string) (*result.UserResult, error) {
+func (a *AuthWxWechat) GetUserInfo(openId string, accessToken string) (*result.UserResult, error) {
 	url := utils.NewUrlBuilder(a.TokenUrl).
 		AddParam("openid", openId).
 		AddParam("access_token", accessToken).
@@ -87,7 +87,7 @@ func (a *AuthWx) GetUserInfo(openId string, accessToken string) (*result.UserRes
 		UUID:      m["id"],
 		UserName:  m["login"],
 		NickName:  m["name"],
-		Avatar:    m["avatar_url"],
+		AvatarUrl: m["avatar_url"],
 		Company:   m["company"],
 		Blog:      m["blog"],
 		Location:  m["location"],
@@ -97,7 +97,7 @@ func (a *AuthWx) GetUserInfo(openId string, accessToken string) (*result.UserRes
 		CreatedAt: m["created_at"],
 		UpdatedAt: m["updated_at"],
 		Source:    a.sourceName,
-		Gender:    utils.GetRealGender("").Desc,
+		Gender:    utils.GetRealGender("gender").Desc,
 	}
 	return user, nil
 }

@@ -8,9 +8,9 @@ import (
 )
 
 func main() {
-	wxConf := &config.AuthConfig{ClientId: "xxx", ClientSecret: "xxx", RedirectUrl: "http://www.change.tm"}
+	wxConf := &config.AuthConfig{ClientId: "xxx", ClientSecret: "xxx", RedirectUrl: "http://www.geiqin.com"}
 
-	wxAuth := oauth.NewAuthWx(wxConf)
+	wxAuth := oauth.NewAuthWxWechat(wxConf)
 
 	fmt.Print(wxAuth.GetRedirectUrl("sate")) //获取第三方登录地址
 
