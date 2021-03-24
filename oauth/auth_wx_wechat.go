@@ -66,6 +66,9 @@ func (a *AuthWxWechat) GetToken(code string) (*result.TokenResult, error) {
 		Scope:        m["scope"],
 		TokenType:    m["token_type"],
 	}
+	if token.AccessToken == "" {
+		return nil, errors.New("获取AccessToken数据为空！")
+	}
 	return token, nil
 }
 
@@ -96,6 +99,9 @@ func (a *AuthWxWechat) GetUserInfo(accessToken string, openId string) (*result.U
 		Language:  m["language"],
 		Source:    a.sourceName,
 		Gender:    utils.GetRealGender("sex").Desc,
+	}
+	if user.OpenId == "" {
+		return nil, errors.New("获取用户信息为空！")
 	}
 	return user, nil
 }
