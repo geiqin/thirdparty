@@ -3,7 +3,8 @@ package result
 //用户信息
 type UserResult struct {
 	UUID      string `json:"uuid"`
-	OpenId    string `json:"openId"`
+	OpenId    string `json:"open_id"`
+	UnionId   string `json:"union_id"`
 	UserName  string `json:"user_name"`
 	NickName  string `json:"nick_name"`
 	AvatarUrl string `json:"avatar"`

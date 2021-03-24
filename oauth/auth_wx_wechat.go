@@ -85,20 +85,17 @@ func (a *AuthWxWechat) GetUserInfo(accessToken string, openId string) (*result.U
 		return nil, errors.New(m["error_description"])
 	}
 	user := &result.UserResult{
-		UUID:      m["id"],
-		UserName:  m["login"],
-		NickName:  m["name"],
-		AvatarUrl: m["avatar_url"],
-		Company:   m["company"],
-		Blog:      m["blog"],
-		Location:  m["location"],
-		Email:     m["email"],
-		Remark:    m["bio"],
-		Url:       m["html_url"],
-		CreatedAt: m["created_at"],
-		UpdatedAt: m["updated_at"],
+		OpenId:    m["openid"],
+		UnionId:   m["unionid"],
+		UserName:  m["nickname"],
+		NickName:  m["nickname"],
+		AvatarUrl: m["headimgurl"],
+		City:      m["city"],
+		Province:  m["province"],
+		Country:   m["country"],
+		Language:  m["language"],
 		Source:    a.sourceName,
-		Gender:    utils.GetRealGender("gender").Desc,
+		Gender:    utils.GetRealGender("sex").Desc,
 	}
 	return user, nil
 }
