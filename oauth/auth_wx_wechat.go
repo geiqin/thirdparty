@@ -61,6 +61,8 @@ func (a *AuthWxWechat) GetToken(code string) (*result.TokenResult, error) {
 		AccessToken:  m["access_token"],
 		RefreshToken: m["refresh_token"],
 		ExpireIn:     m["expires_in"],
+		OpenId:       m["openid"],
+		UnionId:      m["unionid"],
 		Scope:        m["scope"],
 		TokenType:    m["token_type"],
 	}
