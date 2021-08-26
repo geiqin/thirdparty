@@ -17,8 +17,8 @@ func NewAutoWxMini(conf *AuthConfig) *AutoWxMini {
 	authRequest := &AutoWxMini{}
 	authRequest.Set("wx_mini", conf)
 
-	authRequest.TokenUrl = "https://cli.weixin.qq.com/sns/jscode2session"
-	authRequest.RefreshUrl = "https://cli.weixin.qq.com/sns/jscode2session"
+	authRequest.TokenUrl = "https://api.weixin.qq.com/sns/jscode2session"
+	authRequest.RefreshUrl = "https://api.weixin.qq.com/sns/jscode2session"
 
 	return authRequest
 }
