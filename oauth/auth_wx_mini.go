@@ -43,6 +43,7 @@ func (a *AutoWxMini) GetToken(code string) (*result.TokenResult, error) {
 	token := &result.TokenResult{
 		SessionKey: m["session_key"],
 		OpenId:     m["openid"],
+		UnionId:    m["unionid"],
 	}
 	return token, nil
 }
