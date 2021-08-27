@@ -6,7 +6,7 @@ import (
 	"github.com/geiqin/thirdparty/utils"
 )
 
-//微信授权登录
+//微信授权登录（第三方应用）
 type AuthWxWechat struct {
 	BaseRequest
 }
