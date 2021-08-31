@@ -13,7 +13,7 @@ type AuthWb struct {
 
 func NewAuthWb(conf *AuthConfig) *AuthWb {
 	authRequest := &AuthWb{}
-	authRequest.Set("weibo", conf)
+	authRequest.Set(utils.RegisterSourceWeibo, conf)
 
 	authRequest.authorizeUrl = "https://api.weibo.com/oauth2/authorize"
 	authRequest.TokenUrl = "https://api.weibo.com/oauth2/access_token"
@@ -94,7 +94,7 @@ func (a *AuthWb) GetUserInfo(openId string, accessToken string) (*result.UserRes
 		Url:       m["html_url"],
 		CreatedAt: m["created_at"],
 		UpdatedAt: m["updated_at"],
-		Source:    a.sourceName,
+		Source:    a.registerSource,
 		Gender:    utils.GetRealGender("").Desc,
 	}
 	return user, nil

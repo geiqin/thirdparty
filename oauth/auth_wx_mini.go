@@ -15,7 +15,7 @@ type AuthWxMini struct {
 
 func NewAuthWxMini(conf *AuthConfig) *AuthWxMini {
 	authRequest := &AuthWxMini{}
-	authRequest.Set("wx_mini", conf)
+	authRequest.Set(utils.RegisterSourceWxMini, conf)
 
 	authRequest.TokenUrl = "https://api.weixin.qq.com/sns/jscode2session"
 	authRequest.RefreshUrl = "https://api.weixin.qq.com/sns/jscode2session"
@@ -94,7 +94,7 @@ func (a *AuthWxMini) GetUserInfo(sessionKey string, encryptedData string, iv str
 		City:      m["city"],
 		Province:  m["province"],
 		Country:   m["country"],
-		Source:    a.sourceName,
+		Source:    a.registerSource,
 		Gender:    utils.GetRealGender(m["gender"]).Desc,
 	}
 

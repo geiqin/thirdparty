@@ -13,7 +13,7 @@ type AuthWxWechat struct {
 
 func NewAuthWxWechat(conf *AuthConfig) *AuthWxWechat {
 	authRequest := &AuthWxWechat{}
-	authRequest.Set("wx_wechat", conf)
+	authRequest.Set(utils.RegisterSourceWechat, conf)
 
 	authRequest.authorizeUrl = "https://open.weixin.qq.com/connect/qrconnect"
 	authRequest.TokenUrl = "https://api.weixin.qq.com/sns/oauth2/access_token"
@@ -97,7 +97,7 @@ func (a *AuthWxWechat) GetUserInfo(accessToken string, openId string) (*result.U
 		Province:  m["province"],
 		Country:   m["country"],
 		Language:  m["language"],
-		Source:    a.sourceName,
+		Source:    a.registerSource,
 		Gender:    utils.GetRealGender("sex").Desc,
 	}
 	if user.OpenId == "" {

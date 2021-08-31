@@ -20,7 +20,7 @@ type UserResult struct {
 	Remark    string `json:"remark"`
 	Url       string `json:"url"`
 	Gender    string `json:"gender"`
-	Source    string `json:"source"`
+	Source    int32  `json:"source"`
 	CreatedAt string `json:"created_at"`
 	UpdatedAt string `json:"updated_at"`
 

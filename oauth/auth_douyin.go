@@ -13,7 +13,7 @@ type AuthDouYin struct {
 
 func NewAuthDouYin(conf *AuthConfig) *AuthDouYin {
 	authRequest := &AuthDouYin{}
-	authRequest.Set("douyin", conf)
+	authRequest.Set(utils.RegisterSourceDouYin, conf)
 
 	authRequest.authorizeUrl = "https://open.douyin.com/platform/oauth/connect"
 	authRequest.TokenUrl = "https://open.douyin.com/oauth/access_token"
@@ -94,7 +94,7 @@ func (a *AuthDouYin) GetUserInfo(openId string, accessToken string) (*result.Use
 		Url:       m["html_url"],
 		CreatedAt: m["created_at"],
 		UpdatedAt: m["updated_at"],
-		Source:    a.sourceName,
+		Source:    a.registerSource,
 		Gender:    utils.GetRealGender("").Desc,
 	}
 	return user, nil

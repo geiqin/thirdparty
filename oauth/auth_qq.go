@@ -13,7 +13,7 @@ type AuthQq struct {
 
 func NewAuthQq(conf *AuthConfig) *AuthQq {
 	authRequest := &AuthQq{}
-	authRequest.Set("qq", conf)
+	authRequest.Set(utils.RegisterSourceQQ, conf)
 
 	authRequest.authorizeUrl = "https://graph.qq.com/oauth2.0/authorize"
 	authRequest.TokenUrl = "https://graph.qq.com/oauth2.0/token"
@@ -94,7 +94,7 @@ func (a *AuthQq) GetUserInfo(openId string, accessToken string) (*result.UserRes
 		Url:       m["html_url"],
 		CreatedAt: m["created_at"],
 		UpdatedAt: m["updated_at"],
-		Source:    a.sourceName,
+		Source:    a.registerSource,
 		Gender:    utils.GetRealGender("").Desc,
 	}
 	return user, nil

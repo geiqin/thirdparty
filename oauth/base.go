@@ -18,12 +18,12 @@ type BaseRequest struct {
 	RefreshUrl     string      //刷新令牌URL
 	userInfoUrl    string      //获取用户信息URL
 	config         *AuthConfig //配置信息
-	sourceName     string      //来源名称
+	registerSource int32       //注册来源
 }
 
-func (b *BaseRequest) Set(sourceName string, cfg *AuthConfig) {
+func (b *BaseRequest) Set(sourceName utils.RegisterSource, cfg *AuthConfig) {
 	b.config = cfg
-	b.sourceName = sourceName
+	b.registerSource = int32(sourceName)
 }
 
 func (*BaseRequest) GetState(state string) string {
