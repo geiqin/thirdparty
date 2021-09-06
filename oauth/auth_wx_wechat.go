@@ -40,13 +40,45 @@ func (a *AuthWxWechat) GetRedirectUrl(state string) (*result.CodeResult, error) 
 }
 
 //获取token
-func (a *AuthWxWechat) GetToken(code string) (*result.TokenResult, error) {
+func (a *AuthWxWechat) GetWebAccessToken(code string) (*result.TokenResult, error) {
 	url := utils.NewUrlBuilder(a.TokenUrl).
 		AddParam("grant_type", "authorization_code").
 		AddParam("code", code).
 		AddParam("appid", a.config.ClientId).
 		AddParam("secret", a.config.ClientSecret).
 		AddParam("redirect_uri", a.config.RedirectUrl).
+		Build()
+
+	body, err := utils.Post(url)
+	if err != nil {
+		return nil, err
+	}
+	m := utils.JsonToMSS(body)
+	if _, ok := m["error"]; ok {
+		return nil, errors.New(m["error_description"])
+	}
+	token := &result.TokenResult{
+		AccessToken:  m["access_token"],
+		RefreshToken: m["refresh_token"],
+		ExpireIn:     m["expires_in"],
+		OpenId:       m["openid"],
+		UnionId:      m["unionid"],
+		Scope:        m["scope"],
+		TokenType:    m["token_type"],
+	}
+	if token.AccessToken == "" {
+		return nil, errors.New("获取AccessToken数据为空！")
+	}
+	return token, nil
+}
+
+//通过移动应用获取AccessToken
+func (a *AuthWxWechat) GetAppAccessToken(code string) (*result.TokenResult, error) {
+	url := utils.NewUrlBuilder(a.TokenUrl).
+		AddParam("grant_type", "authorization_code").
+		AddParam("code", code).
+		AddParam("appid", a.config.ClientId).
+		AddParam("secret", a.config.ClientSecret).
 		Build()
 
 	body, err := utils.Post(url)
