@@ -13,7 +13,7 @@ type RequestParam struct {
 	RawData       string `json:"raw_data"`
 	EncryptedData string `json:"encrypted_data"`
 	Iv            string `json:"iv"`
-	IsPull        bool
+	IsPull        bool   `json:"is_pull"`
 	PullType      string `json:"pull_type"`
 
 	// huawei
