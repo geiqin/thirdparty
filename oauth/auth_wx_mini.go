@@ -6,6 +6,7 @@ import (
 	"github.com/geiqin/thirdparty/result"
 	"github.com/geiqin/thirdparty/utils"
 	"github.com/xlstudio/wxbizdatacrypt"
+	"log"
 )
 
 //微信小程序授权登录（微信小程序）
@@ -34,9 +35,11 @@ func (a *AuthWxMini) GetSessionKey(code string) (*result.TokenResult, error) {
 		Build()
 
 	body, err := utils.Post(url)
+
 	if err != nil {
 		return nil, err
 	}
+	log.Println("body:", body)
 	m := utils.JsonToMSS(body)
 	if _, ok := m["error"]; ok {
 		return nil, errors.New(m["error_description"])
